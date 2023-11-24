@@ -5,8 +5,8 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import Slide from './Slide'
 
 const Carousel = (props) => {
-  const slidesCount = props.slides ? props.slides : 10
-  const isInfinite = props.infinite ? true : false
+  const slidesCount = props.slides ? parseInt(props.slides) : 10
+  const isInfinite = props.infinite === "true" ? true : false
   const [slideNumber, setSlideNumber] = useState(0)
   const [slidesData, setSlidesData] = useState([])
 
@@ -42,8 +42,8 @@ const Carousel = (props) => {
     <div className="container relative max-w-none w-full h-screen overflow-hidden bg-black">
       {slidesCount !== 1 ?
         <>
-          <Button onClick={() => previousSlide()} className="left-20"><FaAngleLeft /></Button>
-          <Button onClick={() => nextSlide()} className="right-20"><FaAngleRight /></Button>
+          <Button onClick={() => previousSlide()} className="left-5 lg:left-20"><FaAngleLeft /></Button>
+          <Button onClick={() => nextSlide()} className="right-5 lg:right-20"><FaAngleRight /></Button>
         </>
         : ''
       }
@@ -55,6 +55,7 @@ const Carousel = (props) => {
         )}
       </div>
     </div>
+    
   )
 }
 

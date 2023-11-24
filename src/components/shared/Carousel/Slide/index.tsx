@@ -5,7 +5,7 @@ import SubTitle from './SubTitle'
 
 const Slide = (props) => {
   return(
-    <div className={`container max-w-none w-screen h-full relative flex flex-col items-center justify-center flex-grow-0 flex-shrink-0 flex-100`}>
+    <div className={`container max-w-none w-full h-full relative flex flex-col items-center justify-center flex-grow-0 flex-shrink-0 flex-100`}>
       <Image image={props.image} />
       <Title>{props.title}</Title>
       <SubTitle>{props.subTitle}</SubTitle>

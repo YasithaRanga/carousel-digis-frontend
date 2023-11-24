@@ -1,11 +1,11 @@
 import './App.css'
-import Carousel from './components/shared/Carousel'
+import CarouselsPage from './pages/carousels-page'
 
 function App() {
 
   return (
     <>
-      <Carousel slides={4} inifinite={true}/>
+      <CarouselsPage />
     </>
   )
 }

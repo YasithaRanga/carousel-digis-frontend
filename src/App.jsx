@@ -1,12 +1,10 @@
 import './App.css'
-import CarouselsPage from './pages/carousels-page'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
   return (
-    <>
-      <CarouselsPage />
-    </>
+    <div className='App'><Outlet /></div>
   )
 }
 

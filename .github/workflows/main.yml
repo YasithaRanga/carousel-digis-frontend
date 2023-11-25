@@ -1,0 +1,32 @@
+name: Deploy Frontend
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/accounts/40f33fc20eb8a4f2a027fff183303158/pages/projects/carousel-digis-frontend/deployments" \
+            -H "Authorization: Bearer vI6RjiCW9Y-T76ZYAscHjZRA19ttUY2jCn39c-vn" \
+            -H "Content-Type: application/json" \
+            --data '{"branch": "staging"}'

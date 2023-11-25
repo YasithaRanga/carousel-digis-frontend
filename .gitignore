@@ -27,5 +27,3 @@ package-lock.json
 
 #aws
 .aws-sam
-samconfig.toml
-template.yml

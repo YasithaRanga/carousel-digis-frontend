@@ -31,7 +31,7 @@ Resources:
       DistributionConfig:
         Origins:
           - DomainName: carousel-bucket.s3.ap-south-1.amazonaws.com
-            Id: S3-carousel-bucket
+            Id: carousel-bucket
             S3OriginConfig:
               OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginIdentity}'
         Enabled: 'true'
@@ -40,7 +40,7 @@ Resources:
           AllowedMethods:
             - GET
             - HEAD
-          TargetOriginId: S3-private-bucket
+          TargetOriginId: carousel-bucket
           ForwardedValues:
             QueryString: 'false'
             Cookies:
